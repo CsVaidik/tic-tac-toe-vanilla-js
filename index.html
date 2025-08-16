@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tic‑Tac‑Toe • Vanilla JS</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="app">
+        <div class="card">
+            <header>
+                <div>
+                    <h1>Tic‑Tac‑Toe</h1>
+                    <div class="sub">Vanilla JS • keyboard‑friendly • local scores</div>
+                </div>
+                <div class="controls" role="group" aria-label="Game options">
+                    <div class="select"><label for="mode">Mode</label>
+                        <select id="mode" aria-label="Game mode">
+                            <option value="pvp">Player vs Player</option>
+                            <option value="cpu">Player vs CPU</option>
+                        </select>
+                    </div>
+                    <div class="select" id="sideWrap"><label for="side">You play</label>
+                        <select id="side" aria-label="Player side">
+                            <option value="X">X (first)</option>
+                            <option value="O">O (second)</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" id="newBtn" aria-label="Start new round">New Round</button>
+                    <button class="btn btn-ghost" id="themeBtn" aria-label="Toggle theme">Toggle Theme</button>
+                </div>
+            </header>
+
+            <div class="layout">
+                <section class="panel" aria-label="Game board">
+                    <div class="status" aria-live="polite" id="status">
+                        <div><span class="badge X" id="turnBadge">X</span> turn</div>
+                        <div id="resultMsg">Make your move.</div>
+                    </div>
+
+                    <div class="board" id="board" role="grid" aria-label="Tic‑Tac‑Toe grid">
+                        <!-- cells injected by JS -->
+                    </div>
+
+                    <footer>
+                        <button class="btn btn-ghost" id="resetBtn">Reset Board</button>
+                        <button class="btn btn-danger" id="clearBtn">Clear Scores</button>
+                    </footer>
+                </section>
+
+                <aside class="panel" aria-label="Scoreboard">
+                    <div class="score">
+                        <div class="tile X">
+                            <h3>X Wins</h3>
+                            <div class="num" id="xWins">0</div>
+                        </div>
+                        <div class="tile D">
+                            <h3>Draws</h3>
+                            <div class="num" id="draws">0</div>
+                        </div>
+                        <div class="tile O">
+                            <h3>O Wins</h3>
+                            <div class="num" id="oWins">0</div>
+                        </div>
+                    </div>
+                    <div class="sub">Scores are saved on this device.</div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <span id="sr" class="sr-only" aria-live="polite"></span>
+
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>
